@@ -1,13 +1,12 @@
-from flask import Flask, jsonify, request
+from flask import Flask, request
 import pandas as pd
-# from flask_cors import CORS
+from flask_cors import CORS
 from json_data import tick_json
 from json_data import date_tick_json
 from os.path import exists
-import gunicorn
 
 app = Flask(__name__)
-# CORS(app)
+CORS(app)
 
 @app.route('/')
 def home_page():
